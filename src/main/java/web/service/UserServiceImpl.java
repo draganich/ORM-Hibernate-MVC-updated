@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 
     public UserServiceImpl(UserDAO userDAO) { this.userDAO = userDAO; }
 
-    @Transactional(readOnly = true)
+    @Transactional
     @Override
     public List<User> userList(int num) { return userDAO.userList(num); }
 
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) { userDAO.save(user); }
 
-    @Transactional(readOnly = true)
+    @Transactional
     @Override
     public User getID(int id) { return userDAO.getID(id); }
 
